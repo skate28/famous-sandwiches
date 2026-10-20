@@ -14,7 +14,7 @@ export function Order() {
   const phoneOnly = links.every((link) => link.kind === "phone");
 
   return (
-    <section id="order" aria-labelledby="order-title" className="pinstripe border-b-[3px] border-ink bg-ink py-20 text-cream sm:py-24">
+    <section id="order" aria-labelledby="order-title" className="pinstripe border-b-[3px] border-ink bg-teal py-20 text-cream sm:py-24">
       <div className={container}>
         <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
         <Reveal>
@@ -22,7 +22,7 @@ export function Order() {
           {phoneOnly && (
             <a
               href={links[0].href}
-              className={`mt-6 inline-block rounded font-display text-[clamp(2.75rem,9vw,6rem)] leading-none tracking-tight text-mustard hover:text-cream ${focusRing}`}
+              className={`mt-6 inline-block rounded font-display text-[clamp(1.75rem,8vw,6rem)] leading-none whitespace-nowrap tracking-tight text-mustard sign-extrude hover:text-cream ${focusRing}`}
             >
               {phoneLabel(site.phone)}
             </a>

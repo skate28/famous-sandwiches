@@ -75,7 +75,7 @@ export function MenuTabs({ categories }: { categories: MenuTabCategory[] }) {
             key={current.id}
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={reduce ? undefined : { opacity: 0, y: -12 }}
+            {...(reduce ? {} : { exit: { opacity: 0, y: -12 } })}
             transition={{ duration: reduce ? 0 : 0.25 }}
           >
             <div className={cn("grid gap-8", current.photo && "lg:grid-cols-[1fr_17rem]")}>
@@ -101,15 +101,15 @@ export function MenuTabs({ categories }: { categories: MenuTabCategory[] }) {
                       {item.prices.length === 0 && item.price && (
                         <>
                           <span aria-hidden="true" className="mx-1 flex-1 translate-y-[-0.3em] border-b-2 border-dotted border-ink/30" />
-                          <span className="font-display text-2xl text-brand">{item.price}</span>
+                          <span className="font-display text-xl text-brand">{item.price}</span>
                         </>
                       )}
                     </div>
                     {item.prices.length > 0 && (
-                      <p className="mt-1 flex flex-wrap gap-x-4 font-display text-lg text-brand">
+                      <p className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 font-display text-base text-brand">
                         {item.prices.map((size) => (
-                          <span key={size.label}>
-                            <span className="text-ink/70">{size.label}</span> {size.price}
+                          <span key={size.label} className="whitespace-nowrap">
+                            <span className="font-sans text-sm font-semibold text-ink/65">{size.label}</span> {size.price}
                           </span>
                         ))}
                       </p>

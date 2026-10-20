@@ -33,7 +33,7 @@ business copy, prices, hours, or photos.
 | `locationHint` | Line under the address | hidden |
 | `geo` | Map pin + JSON-LD. Null → map by street address | address embed |
 | `mapUrl` | Directions buttons | directions URL built from `address.full` |
-| `phone` | Every call button, the big tap-to-call band, ticker, sticky mobile Call bar | — |
+| `phone` | Every call button, the big tap-to-call band (when `orderingLinks` is empty), ticker, sticky mobile Call bar | — |
 | `hours` | Hours card + table, live open/closed pill, footer, JSON-LD | Hours card, pill and footer hours hidden |
 | `closedNotice` | Hours card, only while closed | hidden |
 | `priceRange`, `paymentNote` | Small line on the hours/location card | hidden |

@@ -6,11 +6,12 @@ import { site } from "@/content";
 import { cn } from "@/lib/cn";
 import { phoneLabel, telHref } from "@/lib/contact";
 import { directionsHref } from "@/lib/maps";
+import { orderingLinks } from "@/lib/ordering";
 
-/** Big tap-to-call band on teal booth stripes. Hidden when there is no phone number. */
+/** Big tap-to-call band on teal booth stripes. Hidden when there is no phone number or the Order section already covers it. */
 export function CallBand() {
   const tel = telHref(site.phone);
-  if (!tel) return null;
+  if (!tel || orderingLinks(site).length > 0) return null;
   const directions = directionsHref(site);
 
   return (

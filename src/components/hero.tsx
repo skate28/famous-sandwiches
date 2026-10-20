@@ -5,6 +5,7 @@ import { CheckerStrip } from "@/components/checker-strip";
 import { HeroArt } from "@/components/hero-art";
 import { HeroTitle } from "@/components/hero-title";
 import { ShopStatusPill } from "@/components/shop-status";
+import { SpinBadge } from "@/components/spin-badge";
 import { buttonCream, buttonRed, container, focusRing } from "@/components/styles";
 import { nameLines } from "@/components/wordmark";
 import { site } from "@/content";
@@ -90,7 +91,7 @@ export function Hero() {
 
         <div className="relative">
           {photo ? (
-            <figure className="relative mx-auto max-w-md rotate-2 rounded-3xl border-[3px] border-ink bg-paper p-3 shadow-[10px_10px_0_0_var(--fs-ink)]">
+            <figure className="relative mx-auto mb-10 max-w-md rotate-2 lg:mb-0 lg:max-w-none rounded-3xl border-[3px] border-ink bg-paper p-3 shadow-[10px_10px_0_0_var(--fs-ink)]">
               <Image
                 src={photo.src}
                 alt={photo.alt}
@@ -99,6 +100,9 @@ export function Hero() {
                 sizes="(min-width: 1024px) 40vw, 90vw"
                 className="h-auto w-full rounded-2xl object-cover"
               />
+              <SpinBadge text={ringText || site.name} className="absolute -bottom-12 -left-4 w-28 -rotate-6 sm:-left-12 sm:w-36">
+                <span className="px-1 text-center font-display text-xs uppercase leading-tight sm:text-sm">{center}</span>
+              </SpinBadge>
             </figure>
           ) : (
             <HeroArt ringText={ringText || site.name} center={center} />

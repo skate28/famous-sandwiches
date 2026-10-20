@@ -27,14 +27,14 @@ public/images/  real photos only
 ## How content is wired
 
 Components import content only via `import { site } from "@/content"` (`src/content/index.ts`).
-Code-owned photo maps live in `src/lib/photos.ts` (`PHOTO_ITEM`, `CATEGORY_PHOTO`).
+Code-owned photo maps live in `src/lib/photos.ts` (`PHOTO_ITEM`, `CATEGORY_PHOTO` = the photo beside a menu tab).
 
 ## Page order
 
 Header (checker band, wordmark, section links, call pill) → Hero (block + script sign lettering, tagline, rating
 chip and live open/closed pill when present, Call + Directions, hero photo or illustrated spinning badge) → ticker
 (menu categories, else cuisine/neighborhood/street/phone) → Menu (tabs) → About (photo or guest-check card) →
-Reviews → Photos → Order → tap-to-call band → Hours & location (map) → FAQ → Footer.
+Reviews → Photos → Order → tap-to-call band (only when there are no ordering links) → Hours & location (map) → FAQ → Footer.
 Phones get a sticky Call / Menu / Directions bar.
 
 Every content section returns `null` when its content is empty, and its header link disappears with it.

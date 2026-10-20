@@ -31,12 +31,13 @@ export function MenuSection() {
     })),
   }));
   if (categories.length === 0) return null;
+  const note = site.menuNote.trim();
 
   return (
     <section id="menu" aria-labelledby="menu-title" className="counter-grain border-b-[3px] border-ink py-20 sm:py-28">
       <div className={cn(container)}>
         <Reveal>
-          <SectionHeading id="menu-title" kicker="Order up" title="The Menu" note={site.menuNote.trim() || undefined} />
+          <SectionHeading id="menu-title" kicker="Order up" title="The Menu" {...(note ? { note } : {})} />
         </Reveal>
         <Reveal delay={0.1} className="mt-10">
           <MenuTabs categories={categories} />

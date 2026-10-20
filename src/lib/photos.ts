@@ -67,7 +67,12 @@ const PHOTO_ITEM: Readonly<Record<string, string>> = {};
  * Feature photo for a menu category tab, by category id. Code-owned (like PHOTO_ITEM).
  * Ignored when the file is not in `photos`.
  */
-const CATEGORY_PHOTO: Readonly<Record<string, string>> = {};
+const CATEGORY_PHOTO: Readonly<Record<string, string>> = {
+  "breakfast-platters": "/images/breakfast-eggs-grits-sausage-toast.jpg",
+  "biscuits-gravy": "/images/breakfast-fish-grits-gravy.jpg",
+  "pitas-sandwiches-subs": "/images/philly-steak-pita.jpg",
+  "burgers-dogs": "/images/giant-cheeseburger-fries.jpg",
+};
 
 export function photoForCategory(id: string, photos: Photo[]): Photo | null {
   const src = CATEGORY_PHOTO[id];

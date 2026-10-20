@@ -55,7 +55,6 @@ export function About() {
   if (!hasAbout()) return null;
   const paragraphs = site.about.paragraphs.map((p) => p.trim()).filter(Boolean);
   const photo = storyPhoto(site.photos);
-  const opened = site.opened.trim();
 
   return (
     <section id="about" aria-labelledby="about-title" className="relative overflow-hidden border-b-[3px] border-ink bg-paper py-20 sm:py-28">
@@ -63,7 +62,7 @@ export function About() {
         <Reveal>
           <SectionHeading
             id="about-title"
-            kicker={opened ? `Since ${opened}` : "Pull up a stool"}
+            kicker="Pull up a stool"
             title={site.about.heading.trim() || "About"}
           />
           <div className="mt-8 max-w-xl space-y-5 text-lg leading-relaxed text-ink/85">
