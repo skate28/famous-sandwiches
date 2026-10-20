@@ -13,6 +13,10 @@ const BURGER_COMBO = (burger: number, combo: number) => [
   { label: "Burger", price: burger },
   { label: "Combo", price: combo },
 ];
+const SINGLE_COMBO = (single: number, combo: number) => [
+  { label: "Single", price: single },
+  { label: "Combo", price: combo },
+];
 
 export const site: SiteContent = {
   name: "Famous Sandwiches",
@@ -334,11 +338,11 @@ export const site: SiteContent = {
         { id: "double-cheeseburger", signature: true, name: "Double Cheeseburger", sizes: BURGER_COMBO(6.99, 10.99) },
         { id: "triple-cheeseburger", name: "Triple Cheeseburger", sizes: BURGER_COMBO(8.99, 12.99) },
         { id: "bacon-cheeseburger", name: "Bacon Cheeseburger", sizes: BURGER_COMBO(6.99, 10.99) },
-        { id: "crispy-chicken", name: "Crispy Chicken", sizes: BURGER_COMBO(4.99, 8.99) },
-        { id: "spicy-chicken", name: "Spicy Chicken", sizes: BURGER_COMBO(4.99, 8.99) },
-        { id: "fried-corn-dog", name: "Fried Corn Dog", sizes: BURGER_COMBO(3.99, 7.99) },
-        { id: "beef-hot-dog", name: "100% Beef Hot Dog", description: "Plain.", sizes: BURGER_COMBO(3.99, 7.99) },
-        { id: "sausage-dog", name: '8" Sausage Dog', description: "Nettles sausage.", sizes: BURGER_COMBO(7.99, 11.99) },
+        { id: "crispy-chicken", name: "Crispy Chicken", sizes: SINGLE_COMBO(4.99, 8.99) },
+        { id: "spicy-chicken", name: "Spicy Chicken", sizes: SINGLE_COMBO(4.99, 8.99) },
+        { id: "fried-corn-dog", name: "Fried Corn Dog", sizes: SINGLE_COMBO(3.99, 7.99) },
+        { id: "beef-hot-dog", name: "100% Beef Hot Dog", description: "Plain.", sizes: SINGLE_COMBO(3.99, 7.99) },
+        { id: "sausage-dog", name: '8" Sausage Dog', description: "Nettles sausage.", sizes: SINGLE_COMBO(7.99, 11.99) },
         { id: "fish-sandwich", name: "Fish", description: "Cod." },
       ],
     },
@@ -461,7 +465,7 @@ export const site: SiteContent = {
     ],
   },
 
-  heroKicker: "Murray Hill · Jacksonville since 1986",
+  heroKicker: "Murray Hill · Since 1986",
 
   servesCuisine: ["Breakfast", "Sandwiches", "Burgers"],
 
